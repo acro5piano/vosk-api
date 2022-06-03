@@ -18,8 +18,10 @@ const rec = new vosk.Recognizer({model: model, sampleRate: SAMPLE_RATE});
 var micInstance = mic({
     rate: String(SAMPLE_RATE),
     channels: '1',
-    debug: false,
-    device: 'default',    
+    debug: true,
+    // Please comment out the following line if you are using Linux environment.
+    // If you have multiple input sources, you may wan to change this value other than `default`
+    // device: 'default',
 });
 
 var micInputStream = micInstance.getAudioStream();
